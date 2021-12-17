@@ -3,6 +3,7 @@ import boto3
 import json
 import argparse
 import os
+import re
 
 # Arguments
 parser = argparse.ArgumentParser()
@@ -51,8 +52,12 @@ def get_event():
     isExist = os.path.exists(directory)
     if not isExist:
       os.makedirs(directory)
+    sub_startime = re.sub(r':| |, ', '-', set_startime)
+    sub_endtime = re.sub(r':| |, ', '-', set_endtime)
+    sub_arn = set_arn.split("/")[-1]
+    file_name = f'cloudtrail-from-{sub_startime}-to-{sub_endtime}-ID-{set_accountid}-region-{set_region}-role-{sub_arn}.txt'
     textfile = open(
-      f'{directory}/cloudtrail-from-{set_startime}-to-{set_endtime}-ID-{set_accountid}-region-{set_region}.txt', 'w'
+      f'{directory}/{file_name}', 'w'
     )
     paginator = clientCT.get_paginator('lookup_events')
     response_iterator_CT = paginator.paginate(

@@ -28,8 +28,11 @@ def get_event():
     isExist = os.path.exists(directory)
     if not isExist:
       os.makedirs(directory)
+    sub_startime = re.sub(r':| |, ', '-', set_startime)
+    sub_endtime = re.sub(r':| |, ', '-', set_endtime)
+    file_name = f'cloudtrail-from-{sub_startime}-to-{sub_endtime}-ID-{set_accountid}-region-{set_region}.txt'
     textfile = open(
-      f'{directory}/cloudtrail-from-{set_startime}-to-{set_endtime}-ID-{set_accountid}-region-{set_region}.txt', 'w'
+      f'{directory}/{file_name}', 'w'
     )
     paginator = clientCT.get_paginator('lookup_events')
     response_iterator_CT = paginator.paginate(
