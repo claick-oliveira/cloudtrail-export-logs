@@ -60,7 +60,7 @@ rm -rf cloudtrail-export-logs
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/claick-oliveira/cloudtrail-export-logs/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/claick-oliveira/cloudtrail-export-logs/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
