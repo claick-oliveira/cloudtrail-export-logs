@@ -36,6 +36,7 @@ To run the script you need to feel some arguments:
 - **"-a", "--accountid"**: The Account ID to get the logs: example 012345678901
 
 > Valid timestamp formats:
+>
 > - 1422317782
 > - 1422317782.0
 > - 01-27-2015
@@ -62,7 +63,7 @@ The script will generate a structure like this:
 
 ### Switch role
 
-To execute run this script on environment with switch role, use the script `export_role.py`. This script there is an argument to specify the role ARN:
+To execute this script on environment with switch role, use the script `export_role.py`. This script there is an argument to specify the role ARN:
 
 - **"-arn", "--arn"**: The Role ARN to switch, example arn:aws:iam::016075864677:role/CloudTrailAssumeRole
 
