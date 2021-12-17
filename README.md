@@ -35,6 +35,16 @@ To run the script you need to feel some arguments:
 - **"-r", "--region"**: The AWS region to get the logs, example us-east-1
 - **"-a", "--accountid"**: The Account ID to get the logs: example 012345678901
 
+> Valid timestamp formats:
+> - 1422317782
+> - 1422317782.0
+> - 01-27-2015
+> - 01-27-2015,01:16PM
+> - "01-27-2015, 01:16 PM"
+> - "01/27/2015, 13:16"
+> - 2015-01-27
+> - "2015-01-27, 01:16 PM"
+
 Example of command:
 
 ``` bash
@@ -49,6 +59,12 @@ The script will generate a structure like this:
 |       `-- us-east-1
 |           `-- cloudtrail-from-2021-12-01-to-2021-12-31-ID-012345678901-region-us-east-1.txt
 ```
+
+### Switch role
+
+To execute run this script on environment with switch role, use the script `export_role.py`. This script there is an argument to specify the role ARN:
+
+- **"-arn", "--arn"**: The Role ARN to switch, example arn:aws:iam::016075864677:role/CloudTrailAssumeRole
 
 ## Cleanup
 
